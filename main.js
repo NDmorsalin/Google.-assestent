@@ -1,19 +1,31 @@
 var ndmMath={
     morsalin:function(base,power){
-        var arr=[],result;
-        for(var i=0;i<power;i++){
-            arr[i]=base;
-           var res=1;
-            for(j=0;j<arr.length;j++){ 
-            res=res*arr[j];
-            }
-        }
-      return res;
+        var result = 1, x, p;
         
-      }
-    };
-    console.log(Math.pow(10,2));
-   console.log(ndmMath.morsalin(2,3));
+        //make the power positive for looping 
+        if( power < 0 ){
+          p = ( power * ( -1 ) );
+        }else{
+            p = power;
+        }
+        
+        //loop start 
+        for( var i = 1;i <= p; i++ ){
+            
+         if( power > 0 ){
+            x = ( result*= base );
+           
+            }
+           else if( power < 0){
+               x = 1 / ( result *= base );
+           }
+       }//For colose
+       return x;
+      }//function close
+      
+    };//Object close
+  
+   console.log( ndmMath.morsalin(2, 1) );
 
 
 
