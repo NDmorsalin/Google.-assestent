@@ -1,6 +1,6 @@
 var ndmMath={
     morsalin:function(base,power){
-        var result = 1, x, p;
+        var result = 1, x=1, p;
         
         //make the power positive for looping 
         if( power < 0 ){
